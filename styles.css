@@ -20,7 +20,6 @@
 }
 
 /* Dark mode auto */
-}
 
 /* Base */
 *{ box-sizing: border-box; }
@@ -111,6 +110,11 @@ h1,h2,h3,h4{ line-height: 1.2; color: inherit; margin: 0 0 .6rem; }
 .nav a:hover{ color: var(--primary); }
 .nav a[aria-current="page"]{ color: var(--primary); font-weight: 800; }
 
+/* Ensure nav button colors are not overridden by .nav a */
+.nav .btn-primary{ color: #0A1E2A; }
+.nav .btn-primary:hover{ color: #0A1E2A; }
+.nav .btn-outline{ color: var(--primary); border-color: var(--primary); }
+
 /* Mobile nav */
 @media (max-width: 960px){
   .nav{
@@ -162,6 +166,10 @@ h1,h2,h3,h4{ line-height: 1.2; color: inherit; margin: 0 0 .6rem; }
 .card-body{ padding: 1.25rem 1.25rem 1.5rem; }
 .card-body h3{ font-size: 1.2rem; font-weight: 800; margin-bottom: .35rem; }
 .card-body .meta{ color: var(--muted); font-size: .9rem; margin-bottom: .5rem; }
+
+/* Card media background images */
+.card.card--ai .card-media{ background-image: url('assets/partner-tech.png'); }
+.card.card--finance .card-media{ background-image: url('assets/partner-fin.png'); }
 
 /* Feature list */
 .feature-list{ display: grid; gap: 1rem; margin-top: 1.25rem; }
