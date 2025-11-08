@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="120" viewBox="0 0 300 120">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#00C4CC" offset="0"/>
+      <stop stop-color="#007BFF" offset="1"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="120" rx="16" fill="url(#g)"/>
+  <g fill="#0A192F" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="36">
+    <text x="24" y="72">NFCX</text>
+  </g>
+</svg>

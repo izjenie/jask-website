@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Portfolio — JASKAPITAL</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand"><img src="assets/logo-jaskapital.png" alt="JASKAPITAL" class="brand-logo"><span class="sr-only">JASKAPITAL</span></div>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        <span class="sr-only">Menu</span>
+        <span aria-hidden="true">☰</span>
+      </button>
+
+      <nav id="primary-nav" class="nav">
+        <ul>
+          <li><a href="about.html" data-nav="about">About</a></li>
+          <li><a href="portfolio.html" data-nav="portfolio">Portfolio</a></li>
+          <li><a href="index.html#contact" data-nav="contact">Contact</a></li>
+        </ul>
+        <a class="btn btn-primary" href="index.html#contact">Get in Touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section hero">
+      <div class="container container--narrow center-text">
+        <h1>Portfolio</h1>
+        <p class="lead">Select investments we support for long‑term impact.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid grid--3">
+  <article class="card">
+    <div class="card-body">
+      <img src="assets/logo-mcas-white.png" alt="MCAS logo" class="logo-img">
+      <h3>MCAS (PT M Cash Integrasi Tbk)</h3>
+      <p class="meta">Plug-and-play tech platform</p>
+      <p>Technology infrastructure company enabling SaaS/PaaS/LaaS for business communications, cloud advertising, digital products & payments, and logistics—plus clean-energy initiatives such as EV ecosystems.</p>
+      <p><a class="btn btn-outline" href="https://www.mcash.id" target="_blank" rel="noopener">Visit site</a></p>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-body">
+      <img src="assets/logo-nfcx-white.png" alt="NFCX logo" class="logo-img">
+      <h3>NFCX (PT NFC Indonesia Tbk)</h3>
+      <p class="meta">Digital consumer experience</p>
+      <p>Provides digital product aggregation, cloud advertising, content & entertainment, and EV infrastructure—helping brands and retailers modernize customer experiences across channels.</p>
+      <p><a class="btn btn-outline" href="https://www.nfcindonesia.id" target="_blank" rel="noopener">Visit site</a></p>
+    </div>
+  </article>
+
+  <article class="card">
+    <div class="card-body">
+      <img src="assets/logo-risetai-white.png" alt="Riset.ai logo" class="logo-img">
+      <h3>Riset.ai</h3>
+      <p class="meta">Applied AI (Computer Vision & GenAI)</p>
+      <p>Indonesian AI company delivering custom computer-vision and generative-AI solutions for healthcare, retail, and logistics, along with tooling that supports research and enterprise deployments.</p>
+      <p><a class="btn btn-outline" href="https://www.riset.ai" target="_blank" rel="noopener">Visit site</a></p>
+    </div>
+  </article>
+</div>
+</section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand brand--footer"><img src="assets/logo-jaskapital.png" alt="JASKAPITAL" class="brand-logo"></div>
+        <p class="small mt-8">Funding the future of technology.</p>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Contact</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:info@jaskapital.com">info@jaskapital.com</a></li>
+          <li><a href="tel:+622150250350">+6221-50250350</a></li>
+        <li>Jl. H. Agus Salim No.22D</li>
+<li>Menteng, Jakarta Pusat, Indonesia</li>
+</ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p class="small">© 2024 JASKAPITAL. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('primary-nav');
+    function setExpanded(isOpen) {
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      nav.classList.toggle('nav--open', isOpen);
+      document.body.classList.toggle('no-scroll', isOpen);
+    }
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') !== 'true';
+      setExpanded(isOpen);
+    });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setExpanded(false); });
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) setExpanded(false);
+    });
+
+    // Highlight active page
+    const path = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('[data-nav]').forEach(a => {
+      const key = a.getAttribute('data-nav');
+      if ((path === 'about.html' && key === 'about') ||
+          (path === 'portfolio.html' && key === 'portfolio')) {
+        a.setAttribute('aria-current', 'page');
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>JASKAPITAL - Investing in AI and Finance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand"><img src="assets/logo-jaskapital.png" alt="JASKAPITAL" class="brand-logo"><span class="sr-only">JASKAPITAL</span></div>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        <span class="sr-only">Menu</span>
+        <span aria-hidden="true">☰</span>
+      </button>
+
+      <nav id="primary-nav" class="nav">
+        <ul>
+          <li><a href="about.html" data-nav="about">About</a></li>
+          <li><a href="portfolio.html" data-nav="portfolio">Portfolio</a></li>
+          <li><a href="index.html#contact" data-nav="contact">Contact</a></li>
+        </ul>
+        <a class="btn btn-primary" href="index.html#contact">Get in Touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section hero">
+      <div class="container container--narrow center-text">
+        <h1>Investing at the Intersection of AI and Capital</h1>
+        <p class="lead">
+          Empowering the next generation of fintech innovators with strategic seed and growth capital.
+          We partner with visionary founders to build the future.
+        </p>
+        <a class="btn btn-outline" href="about.html">Our Thesis</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title center-text">Our Dual Expertise</h2>
+        <div class="grid grid--2">
+          <article class="card">
+            <div class="card-media" role="img" aria-label="Abstract neural networks in blue"></div>
+            <div class="card-body">
+              <h3>AI Innovation</h3>
+              <p>We back visionary founders leveraging artificial intelligence to redefine industries. We provide deep technical guidance alongside capital.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-media" role="img" aria-label="Modern stock market chart"></div>
+            <div class="card-body">
+              <h3>Financial Acumen</h3>
+              <p>Our financial expertise helps portfolio companies build robust business models, navigate regulation, and grow sustainably.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint">
+      <div class="container container--narrow center-text">
+        <h2>Partner with Us to Build the Future</h2>
+        <p class="lead">Are you an ambitious founder with a groundbreaking idea in AI or finance? Let’s talk.</p>
+        <a class="btn btn-primary" href="portfolio.html">View Portfolio</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand brand--footer"><img src="assets/logo-jaskapital.png" alt="JASKAPITAL" class="brand-logo"></div>
+        <p class="small mt-8">Funding the future of technology.</p>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Contact</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:info@jaskapital.com">info@jaskapital.com</a></li>
+          <li><a href="tel:+622150250350">+6221-50250350</a></li>
+        <li>Jl. H. Agus Salim No.22D</li>
+<li>Menteng, Jakarta Pusat, Indonesia</li>
+</ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p class="small">© 2024 JASKAPITAL. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('primary-nav');
+    function setExpanded(isOpen) {
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      nav.classList.toggle('nav--open', isOpen);
+      document.body.classList.toggle('no-scroll', isOpen);
+    }
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') !== 'true';
+      setExpanded(isOpen);
+    });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setExpanded(false); });
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) setExpanded(false);
+    });
+
+    // Highlight active page
+    const path = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('[data-nav]').forEach(a => {
+      const key = a.getAttribute('data-nav');
+      if ((path === 'about.html' && key === 'about') ||
+          (path === 'portfolio.html' && key === 'portfolio')) {
+        a.setAttribute('aria-current', 'page');
+      }
+    });
+  </script>
+
+</body>
+</html>
